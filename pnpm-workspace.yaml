@@ -1,0 +1,6 @@
+catalog:
+  postprocessing: 6.38.0
+lockfileIncludeTarballUrl: false
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - miaoda-sc-plugin

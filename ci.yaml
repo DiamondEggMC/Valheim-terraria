@@ -1,0 +1,31 @@
+Global:
+  version: "2.0"
+  group_email: miaoda_public_res@baidu.com
+Default:
+  profile:
+    - buildProduction
+Profiles:
+  - profile:
+    name: buildProduction
+    mode: AGENT
+    environment:
+      image: DECK_STD_CENTOS7
+      tools:
+        - nodejs: 22.latest
+    build:
+      command: |
+        export NODE_ENV=production && sh scripts/build.sh
+    artifacts:
+      release: true
+  - profile:
+    name: buildDevelopment
+    mode: AGENT
+    environment:
+      image: DECK_STD_CENTOS7
+      tools:
+        - nodejs: 22.latest
+    build:
+      command: |
+        export NODE_ENV=development && sh scripts/build.sh
+    artifacts:
+      release: true
